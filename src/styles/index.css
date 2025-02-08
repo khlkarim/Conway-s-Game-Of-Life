@@ -8,13 +8,16 @@
     margin: 0;
     padding: 0;
     outline: none;
+    box-sizing: border-box; /* Ensures padding and borders are included in element's total width and height */
 }
 
 body {
     background-color: black;
     color: white;
+    font-size: 1rem; /* Base font size */
 }
 
+/* Title Styling */
 .title {
     font-size: 2.4rem;
     font-weight: bold;
@@ -23,59 +26,84 @@ body {
     padding: 2rem 0;
 }
 
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.8rem; /* Adjust title font size for smaller screens */
+        margin-bottom: 2rem;
+    }
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: stretch;
+    padding: 1rem; /* Padding for smaller screens */
 }
 
-#config{
+#config {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-around;
-    align-items:center;
-
+    align-items: center;
     flex: 1;
-
-    min-width: 600px;
-    min-height: 400px;
-
-    max-width: 700px;
-    max-height: 700px;
+    min-width: 58%; /* Responsive width */
+    min-height: 20rem; /* Responsive height */
+    max-width: 90%;
+    max-height: 80%;
+    margin: 1.2rem 0;
 }
 
+@media (max-width: 768px) {
+    #config {
+        min-width: 90%;
+        min-height: 25rem;
+    }
+}
+
+/* Form item styling */
 .formItem {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-    font-size: 0.9rem;
-    width:80%;
-    height:15%;
-    border-radius: 15px;
-
+    font-size: 1rem; /* Slightly larger for readability */
+    width: 80%;
+    height: 15%;
+    border-radius: 1rem;
     font-weight: 600;
+    margin-bottom: 1rem;
+    flex-wrap: no-wrap;
 }
 
-.formItem label{
-    margin-left:15px;
-}
-.formItem input[type=number]{
-    margin-right:15px;
+@media (max-width: 768px) {
+    .formItem {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+        width: 100%; /* Full width for form items */
+    }
 }
 
-.formEntry{
+.formItem label {
+    margin-left: 1rem;
+}
+
+.formItem input[type=number] {
+    margin-right: 1rem;
+}
+
+/* Form Entry Styling */
+.formEntry {
     color: black;
     background-color: white;
 }
 
-#grid{
+/* Grid styling */
+#grid {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex:1;
+    flex: 1;
+    margin: 1.2rem 0;
 }
 
 .row {
@@ -92,4 +120,31 @@ body {
 
 .state-dead {
     background-color: white;
+}
+
+/* Add media query for screens below 480px */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem; /* Further adjust title size on very small screens */
+        margin-bottom: 1.5rem;
+    }
+
+    .formItem {
+        font-size: 0.8rem; /* Reduce font size on very small screens */
+    }
+
+    #config {
+        min-width: 95%; /* Make config container almost full width */
+    }
+
+    .cell {
+        width: 1.25rem; /* Further reduce cell size */
+        height: 1.25rem;
+    }
+
+    .formBtns{
+        flex-direction: column;
+        align-items: stretch;
+        gap : 1rem;
+    }
 }
