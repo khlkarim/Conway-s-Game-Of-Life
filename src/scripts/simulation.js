@@ -126,3 +126,7 @@ resetStateBtn.addEventListener('click',
         });
     }
 );
+
+window.addEventListener("resize", () => {
+    resizeGridCells();
+});

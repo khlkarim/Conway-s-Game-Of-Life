@@ -28,11 +28,19 @@ function createCell(r, c){
 }
 
 function resizeGridCells(){
-    let cellHeight = (GRID_HEIGHT - 2*(heightElement.value-1))/heightElement.value;
-    let cellWidth = (GRID_WIDTH - 2*(widthElement.value-1))/widthElement.value;
+    let sideLength;
 
-    gridElement.childNodes.forEach((row)=>{
-        row.childNodes.forEach((cell)=>{
+    if(window.innerWidth > 1020){
+        sideLength = window.innerWidth/2.5;
+    }else{
+        sideLength = window.innerWidth/1.1;
+    }
+
+    let cellHeight = sideLength / heightElement.value;
+    let cellWidth = sideLength / widthElement.value;
+
+    gridElement.childNodes.forEach((row) => {
+        row.childNodes.forEach((cell) => {
             cell.style.height = `${cellHeight}px`;
             cell.style.width = `${cellWidth}px`;
         });
