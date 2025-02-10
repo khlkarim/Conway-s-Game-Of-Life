@@ -1,8 +1,12 @@
 
 ### TODO
-    1. Make Page Responsive
+    1. Make Page Responsive +
     2. Add Gliders Catalogue
-    3. Randomization Feature
-    4. Fix Mobile Grid Layout
+    3. Randomization Feature +
+    4. Fix Mobile Grid Layout +
     5. HotKeys for start/stop/reset
-    6. Add Drawing Functionality
+    6. Add Drawing Functionality +
+
+
+* Optimize state array creation
+* unify state in the state array

@@ -29,6 +29,8 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: stretch;
+    gap: 3vh;
+    margin-bottom: 3vh;
 }
 
 #config {
@@ -38,6 +40,7 @@ body {
     justify-content: space-around;
     align-items: center;
     flex: 1;
+    background-color: green;
 }
 
 .formEntry {
@@ -68,8 +71,6 @@ body {
     align-items: stretch;
     justify-content: space-between;
     width: 80%;
-    height: 17vh;
-    margin-bottom: 3rem;
     gap: 1vh;
 }
 
@@ -78,7 +79,6 @@ body {
     flex-direction: column;
     align-items: center;
     flex: 1;
-    margin-bottom: 3rem;
 }
 
 .row {
@@ -87,6 +87,7 @@ body {
 
 .cell {
     border: 1px solid black;
+    /* transition: 0.2s background-color cubic-bezier(.23, 1, 0.32, 1);  */
 }
 
 .state-alive {

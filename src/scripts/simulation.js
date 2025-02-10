@@ -74,15 +74,15 @@ function updateState(shouldToggle, width, height){
 }
 
 function nextState(){
-    let width = widthElement.value;
-    let height = heightElement.value;
+    let width = getResolution();
+    let height = getResolution();
 
     const shouldToggle = determineState(width, height);
     updateState(shouldToggle, width, height);
 }
 
 function startSimulation(){
-    intervalId = setInterval(nextState, (1/simSpeedElement.value)*1000);
+    intervalId = setInterval(nextState, (1/getSimSpeed())*1000);
 }
 function stopSimulation(){
     clearInterval(intervalId);
@@ -130,3 +130,15 @@ resetStateBtn.addEventListener('click',
 window.addEventListener("resize", () => {
     resizeGridCells();
 });
+
+randomizeBtn.addEventListener("click", 
+    (e)=>{
+        gridElement.childNodes.forEach((row)=>{
+            row.childNodes.forEach((cell)=>{
+                if(Math.random()<0.1){
+                    toggleState(cell);
+                }
+            });
+        });
+    }  
+);

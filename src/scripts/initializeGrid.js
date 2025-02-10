@@ -24,6 +24,13 @@ function createCell(r, c){
         cell.classList.toggle('state-dead');
     });
 
+    cell.addEventListener("mouseover", (e)=>{
+        if (e.buttons === 1) {
+            cell.classList.toggle('state-alive');
+            cell.classList.toggle('state-dead');
+        }
+    });
+
     return cell;
 }
 
@@ -36,8 +43,8 @@ function resizeGridCells(){
         sideLength = window.innerWidth/1.1;
     }
 
-    let cellHeight = sideLength / heightElement.value;
-    let cellWidth = sideLength / widthElement.value;
+    let cellHeight = sideLength / getResolution();
+    let cellWidth = sideLength / getResolution();
 
     gridElement.childNodes.forEach((row) => {
         row.childNodes.forEach((cell) => {
@@ -55,4 +62,4 @@ function fillGrid(width, height){
 
     resizeGridCells();
 }
-fillGrid(heightElement.value, widthElement.value);
+fillGrid(getResolution(), getResolution());

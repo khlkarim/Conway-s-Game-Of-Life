@@ -1,5 +1,5 @@
-widthElement.addEventListener("input", (e)=>{
-    let width = widthElement.value;
+resolutionElement.addEventListener("input", (e)=>{
+    let width = getResolution();
     let firstRow = gridElement.childNodes[0]; 
 
     while(firstRow.childNodes.length != width){
@@ -17,12 +17,12 @@ widthElement.addEventListener("input", (e)=>{
     resizeGridCells();
 });
 
-heightElement.addEventListener("input", (e)=>{
-    let height = heightElement.value;
+resolutionElement.addEventListener("input", (e)=>{
+    let height = getResolution();
 
     while(gridElement.childNodes.length != height){
         if(gridElement.childNodes.length < height){
-            gridElement.appendChild(createRow(gridElement.childNodes.length, widthElement.value));
+            gridElement.appendChild(createRow(gridElement.childNodes.length, getResolution()));
         }else{
             gridElement.removeChild(gridElement.lastChild);
         }
