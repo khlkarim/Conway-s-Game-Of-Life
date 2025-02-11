@@ -29,7 +29,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: stretch;
-    gap: 3vh;
+    gap: 5rem;
     margin-bottom: 3vh;
 }
 
